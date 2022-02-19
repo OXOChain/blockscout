@@ -10,28 +10,29 @@ defmodule BlockScoutWeb.LayoutView do
   @issue_url "https://github.com/blockscout/blockscout/issues/new"
   @default_other_networks [
     %{
-      title: "POA",
-      url: "https://blockscout.com/poa/core"
+      title: "OXO",
+      url: "https://explorer.oxochain.com"
     },
     %{
-      title: "Sokol",
-      url: "https://blockscout.com/poa/sokol",
+      title: "TestNet",
+      url: "https://explorer.testnet.oxochain.com",
       test_net?: true
-    },
-    %{
-      title: "Gnosis Chain",
-      url: "https://blockscout.com/xdai/mainnet"
-    },
-    %{
-      title: "Ethereum Classic",
-      url: "https://blockscout.com/etc/mainnet",
-      other?: true
-    },
-    %{
-      title: "RSK",
-      url: "https://blockscout.com/rsk/mainnet",
-      other?: true
     }
+    # ,
+    # %{
+    #   title: "Gnosis Chain",
+    #   url: "https://blockscout.com/xdai/mainnet"
+    # },
+    # %{
+    #   title: "Ethereum Classic",
+    #   url: "https://blockscout.com/etc/mainnet",
+    #   other?: true
+    # },
+    # %{
+    #   title: "RSK",
+    #   url: "https://blockscout.com/rsk/mainnet",
+    #   other?: true
+    # }
   ]
 
   alias BlockScoutWeb.SocialMedia
@@ -49,11 +50,11 @@ defmodule BlockScoutWeb.LayoutView do
   end
 
   def subnetwork_title do
-    Keyword.get(application_config(), :subnetwork) || "Sokol"
+    Keyword.get(application_config(), :subnetwork) || "TestNet"
   end
 
   def network_title do
-    Keyword.get(application_config(), :network) || "POA"
+    Keyword.get(application_config(), :network) || "OXO"
   end
 
   defp application_config do
